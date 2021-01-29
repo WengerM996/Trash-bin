@@ -10,7 +10,7 @@ public class CannonFire : MonoBehaviour
     [SerializeField] private Transform _direction;
     [SerializeField] private float _force;
     [SerializeField] private float _intervalBetweenShots;
-    [SerializeField] private BulletController _bulletController;
+    [SerializeField] private BulletDestroyer bulletDestroyer;
     private float _counter;
     private bool _isCannonHasBullet;
     private Bullet _bullet;
@@ -48,7 +48,7 @@ public class CannonFire : MonoBehaviour
         rigidBody.AddForce(_direction.position * _force, ForceMode.Impulse);
         rigidBody.useGravity = true;
         rigidBody.transform.SetParent(null);
-        _bulletController.AddBulletToList(_bullet);
+        bulletDestroyer.AddBulletToList(_bullet);
         
         _isCannonHasBullet = false;
     }

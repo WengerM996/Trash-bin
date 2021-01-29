@@ -3,8 +3,12 @@ using UnityEngine;
 
 public class DestroyPoint : MonoBehaviour
 {
-    [NonSerialized] public bool active;
+    private bool active;
 
+    public void SetStatus(bool status)
+    {
+        active = status;
+    }
     private void OnTriggerEnter(Collider other)
     {
         CheckCollider(other);
@@ -19,7 +23,7 @@ public class DestroyPoint : MonoBehaviour
     {
         if (active)
         {
-            if (other.gameObject.TryGetComponent(out Bullet Bullet))
+            if (other.gameObject.TryGetComponent(out Bullet bullet))
             {
                 Destroy(other.gameObject);
             }

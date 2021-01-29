@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletController : MonoBehaviour
+public class BulletDestroyer : MonoBehaviour
 {
-    public bool destroyBulletInTrash;
-    
     [SerializeField] private DestroyPoint _destroyPoint;
+    [SerializeField] private bool destroyBulletInTrash;
     private List<Bullet> _bullets;
 
     private void Awake()
@@ -36,7 +35,7 @@ public class BulletController : MonoBehaviour
 
     private void SetStatusDestroyPoint(bool status)
     {
-        _destroyPoint.active = status;
+        _destroyPoint.SetStatus(status);
     }
 
     private void DestroyAllBullets()

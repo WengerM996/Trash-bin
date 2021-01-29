@@ -114,7 +114,7 @@ MonoBehaviour:
   _direction: {fileID: 1179850053456844809}
   _force: 0.65
   _intervalBetweenShots: 0.25
-  _bulletController: {fileID: 0}
+  bulletDestroyer: {fileID: 0}
 --- !u!1 &2285385291444275713
 GameObject:
   m_ObjectHideFlags: 0
